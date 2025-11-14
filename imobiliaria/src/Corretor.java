@@ -1,7 +1,7 @@
 import java.util.Date;
 import java.util.Scanner;
 
-public class Corretor extends Pessoa {
+public class Corretor extends Pessoa implements ReceberValor{
     private String registro;
     private Date dataAdmissao;
     private double comissao;
@@ -16,13 +16,11 @@ public class Corretor extends Pessoa {
     }
 
     public void receber(double valor){
-        this.comissao = valor;
         this.totalComissaoAcumulada += valor;
-        System.out.printf("Corretor: %s%nRegistro: %s%nComissão Acumulada: R$ %2.f%n", nome, registro, valor);
+        System.out.printf("O corretor %s está recebendo o valor de R$ %.2f%n", nome, valor);
     }
     
-    public void sacarComissao(){
-        Scanner scanner = new Scanner(System.in);
+    public void sacarComissao(Scanner scanner){
         System.out.println("========== EXTRATO DA CONTA ==========");
         System.out.printf("Nome: %s%nRegistro: %s%nComissão Disponível para Saque: R$ %2.f%n", nome, registro, totalComissaoAcumulada);
 

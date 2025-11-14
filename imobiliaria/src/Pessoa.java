@@ -10,4 +10,20 @@ public abstract class Pessoa {
         this.cpf = cpf;
         this.endereco = endereco;
     }
+
+    public String getNome(){
+        return nome;
+    }
+
+    public String getCpf(){
+        return cpf;
+    }
+
+    public String getTelefone(){
+        return telefone;
+    }
+
+    public String endereco(){
+        return endereco;
+    }
 }
