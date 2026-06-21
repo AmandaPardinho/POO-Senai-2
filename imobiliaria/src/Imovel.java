@@ -37,5 +37,5 @@ public abstract class Imovel {
         return quartos;
     }
 
-    
+
 }
